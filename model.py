@@ -11,7 +11,7 @@ movies.columns = movies.columns.str.strip()
 credits.columns = credits.columns.str.strip()
 
 # Merge datasets
-movies = movies.merge(credits, left_on='title', right_on='title')
+movies = movies.merge(credits, on="movie_id")
 
 # Select useful columns
 movies = movies[['movie_id','title','overview','genres','keywords','cast','crew']]
